@@ -1,8 +1,9 @@
 {
-  "name": "nest-module-template",
+  "name": "nest-sentry",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "scripts": {
     "format": "prettier --write \"**/*.ts\"",
     "lint": "eslint \"lib/**/*.ts\" --fix",
@@ -21,7 +22,10 @@
     "type": "git",
     "url": "git+https://github.com/Lauweal/nest-module-template.git"
   },
-  "keywords": [],
+  "keywords": [
+    "nestjs",
+    "sentry.io"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -32,7 +36,13 @@
     "**/*.{ts,json}": []
   },
   "peerDependencies": {
-    "@nestjs/common": "^8.0.0 || ^9.0.0"
+    "@nestjs/common": "^9.0.4",
+    "@nestjs/core": "^9.0.4",
+    "@sentry/node": "^7.7.0",
+    "@sentry/hub": "^7.7.0",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^7.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "17.5.1",
@@ -55,5 +65,8 @@
     "prettier": "2.8.7",
     "release-it": "15.10.1",
     "typescript": "5.0.4"
+  },
+  "optionalDependencies": {
+    "@nestjs/graphql": "^10.0.20"
   }
 }
