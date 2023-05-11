@@ -1,6 +1,6 @@
 {
-  "name": "nest-sentry",
-  "version": "1.0.0",
+  "name": "@diabol/nest-sentry",
+  "version": "0.0.0",
   "description": "",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
