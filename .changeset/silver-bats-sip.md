@@ -1,0 +1,5 @@
+---
+'sentry-module': major
+---
+
+publish
