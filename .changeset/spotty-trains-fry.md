@@ -2,4 +2,4 @@
 'sentry-module': patch
 ---
 
-global module
+version
