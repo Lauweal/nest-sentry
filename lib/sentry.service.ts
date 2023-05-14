@@ -1,5 +1,4 @@
-import { Inject, Injectable, ConsoleLogger } from '@nestjs/common';
-import { OnApplicationShutdown } from '@nestjs/common';
+import { Inject, Injectable, ConsoleLogger, OnApplicationShutdown } from '@nestjs/common';
 import { ClientOptions, Client } from '@sentry/types';
 import * as Sentry from '@sentry/node';
 import { SENTRY_MODULE_OPTIONS } from './sentry.constants';
