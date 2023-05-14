@@ -5,3 +5,7 @@ package-lock.json
 tslint.json
 tsconfig.json
 .prettierrc
+.husky
+.github
+.git
+changeset
