@@ -1,5 +1,11 @@
 # sentry-module
 
+## 0.2.0
+
+### Minor Changes
+
+- f12ef16: publish
+
 ## 0.1.0
 
 ### Minor Changes
