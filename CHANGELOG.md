@@ -1,5 +1,11 @@
 # sentry-module
 
+## 0.1.0
+
+### Minor Changes
+
+- 994702d: publish
+
 ## 0.0.4
 
 ### Patch Changes
