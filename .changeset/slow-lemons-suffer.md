@@ -1,5 +1,0 @@
----
-'sentry-module': minor
----
-
-publish
