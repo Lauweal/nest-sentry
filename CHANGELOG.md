@@ -1,5 +1,11 @@
 # sentry-module
 
+## 1.0.2
+
+### Patch Changes
+
+- 68cf9cc: context
+
 ## 1.0.1
 
 ### Patch Changes
