@@ -82,22 +82,32 @@ let SentryService = SentryService_1 = class SentryService extends common_1.Conso
                         context
                     }
                 }) :
-                Sentry.captureMessage(message, 'log');
+                Sentry.captureMessage(message, {
+                    level: 'log',
+                    extra: {
+                        log: context,
+                    },
+                });
         }
         catch (err) { }
     }
     error(message, trace, context) {
         message = `[ERROR] ${message}`;
         try {
-            super.error(message, trace, context);
-            Sentry.captureMessage(message, 'error');
+            super.error(message, trace);
+            Sentry.captureMessage(message, {
+                level: 'error',
+                extra: {
+                    error: context,
+                },
+            });
         }
         catch (err) { }
     }
     warn(message, context, asBreadcrumb) {
         message = `[WARN] ${message}`;
         try {
-            super.warn(message, context);
+            super.warn(message);
             asBreadcrumb ?
                 Sentry.addBreadcrumb({
                     message,
@@ -106,14 +116,19 @@ let SentryService = SentryService_1 = class SentryService extends common_1.Conso
                         context
                     }
                 }) :
-                Sentry.captureMessage(message, 'warning');
+                Sentry.captureMessage(message, {
+                    level: 'warning',
+                    extra: {
+                        warn: context,
+                    },
+                });
         }
         catch (err) { }
     }
     debug(message, context, asBreadcrumb) {
         message = `[DEBUG] ${message}`;
         try {
-            super.debug(message, context);
+            super.debug(message);
             asBreadcrumb ?
                 Sentry.addBreadcrumb({
                     message,
@@ -122,14 +137,19 @@ let SentryService = SentryService_1 = class SentryService extends common_1.Conso
                         context
                     }
                 }) :
-                Sentry.captureMessage(message, 'debug');
+                Sentry.captureMessage(message, {
+                    level: 'debug',
+                    extra: {
+                        debug: context,
+                    },
+                });
         }
         catch (err) { }
     }
     verbose(message, context, asBreadcrumb) {
         message = `[VERBOSE] ${message}`;
         try {
-            super.verbose(message, context);
+            super.verbose(message);
             asBreadcrumb ?
                 Sentry.addBreadcrumb({
                     message,
@@ -138,7 +158,12 @@ let SentryService = SentryService_1 = class SentryService extends common_1.Conso
                         context
                     }
                 }) :
-                Sentry.captureMessage(message, 'info');
+                Sentry.captureMessage(message, {
+                    level: 'info',
+                    extra: {
+                        verbose: context,
+                    },
+                });
         }
         catch (err) { }
     }
