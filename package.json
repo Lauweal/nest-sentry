@@ -41,7 +41,7 @@
     "**/*.{ts,json}": []
   },
   "peerDependencies": {
-    "@nestjs/common": "9.4.0",
+    "@nestjs/common": "9.4.2",
     "@nestjs/core": "^9.0.4",
     "@sentry/hub": "^7.7.0",
     "@sentry/node": "^7.53.1",
@@ -51,7 +51,7 @@
     "rxjs": "^7.2.0"
   },
   "devDependencies": {
-    "@nestjs/common": "9.4.0",
+    "@nestjs/common": "9.4.2",
     "@nestjs/core": "^9.0.4",
     "@sentry/hub": "^7.7.0",
     "@sentry/node": "^7.53.1",
