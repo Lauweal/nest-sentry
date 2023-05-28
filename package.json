@@ -54,7 +54,7 @@
     "@commitlint/cli": "17.5.1",
     "@commitlint/config-angular": "17.4.4",
     "@nestjs/common": "9.4.0",
-    "@nestjs/core": "9.4.0",
+    "@nestjs/core": "9.4.2",
     "@nestjs/testing": "9.4.0",
     "@sentry/node": "^7.53.1",
     "@sentry/types": "^7.53.1",
