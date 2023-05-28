@@ -5,9 +5,10 @@ specifiers:
   '@commitlint/cli': 17.5.1
   '@commitlint/config-angular': 17.4.4
   '@nestjs/common': 9.4.0
-  '@nestjs/core': 9.4.0
+  '@nestjs/core': ^9.0.4
   '@nestjs/graphql': ^10.0.20
   '@nestjs/testing': 9.4.0
+  '@sentry/hub': ^7.7.0
   '@sentry/node': ^7.53.1
   '@sentry/types': ^7.53.1
   '@types/jest': 29.5.0
@@ -21,8 +22,10 @@ specifiers:
   jest: 29.5.0
   lint-staged: 13.2.1
   prettier: 2.8.7
-  reflect-metadata: 0.1.13
+  reflect-metadata: ^0.1.13
   release-it: 15.10.1
+  rimraf: ^3.0.2
+  rxjs: ^7.2.0
   ts-jest: 29.1.0
   typescript: 5.0.4
 
@@ -35,9 +38,10 @@ optionalDependencies:
 devDependencies:
   '@commitlint/cli': 17.5.1
   '@commitlint/config-angular': 17.4.4
-  '@nestjs/common': 9.4.0_reflect-metadata@0.1.13
-  '@nestjs/core': 9.4.0_6r5ladex5hev3tpeuknr3oj3pe
+  '@nestjs/common': 9.4.0_atc7tu2sld2m3nk4hmwkqn6qde
+  '@nestjs/core': 9.4.0_4k3epc74gc2u2qkv5yznawsx6m
   '@nestjs/testing': 9.4.0_gqkob5jndcfeb3wjw72wbdwyne
+  '@sentry/hub': 7.53.1
   '@sentry/node': 7.53.1
   '@sentry/types': 7.53.1
   '@types/jest': 29.5.0
@@ -53,6 +57,8 @@ devDependencies:
   prettier: 2.8.7
   reflect-metadata: 0.1.13
   release-it: 15.10.1_typescript@5.0.4
+  rimraf: 3.0.2
+  rxjs: 7.8.1
   ts-jest: 29.1.0_tobmchb5uviuq5lwsinkw5fvje
   typescript: 5.0.4
 
@@ -1166,7 +1172,7 @@ packages:
       read-yaml-file: 1.1.0
     dev: false
 
-  /@nestjs/common/9.4.0_reflect-metadata@0.1.13:
+  /@nestjs/common/9.4.0_atc7tu2sld2m3nk4hmwkqn6qde:
     resolution: {integrity: sha512-RUcVAQsEF4WPrmzFXEOUfZnPwrLTe1UVlzXTlSyfqfqbdWDPKDGlIPVelBLfc5/+RRUQ0I5iE4+CQvpCmkqldw==}
     peerDependencies:
       cache-manager: <=5
@@ -1184,10 +1190,11 @@ packages:
     dependencies:
       iterare: 1.2.1
       reflect-metadata: 0.1.13
+      rxjs: 7.8.1
       tslib: 2.5.0
       uid: 2.0.2
 
-  /@nestjs/core/9.4.0_6r5ladex5hev3tpeuknr3oj3pe:
+  /@nestjs/core/9.4.0_4k3epc74gc2u2qkv5yznawsx6m:
     resolution: {integrity: sha512-yTLryCgFD0462wPe4HIzhyTcDgibt8Stfwb5YzcX7Ma0NM4m8uBIpcPG109KBubp8ZmV85e5mw4rl20qLQQVsQ==}
     requiresBuild: true
     peerDependencies:
@@ -1205,12 +1212,13 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 9.4.0_reflect-metadata@0.1.13
+      '@nestjs/common': 9.4.0_atc7tu2sld2m3nk4hmwkqn6qde
       '@nuxtjs/opencollective': 0.3.2
       fast-safe-stringify: 2.1.1
       iterare: 1.2.1
       path-to-regexp: 3.2.0
       reflect-metadata: 0.1.13
+      rxjs: 7.8.1
       tslib: 2.5.0
       uid: 2.0.2
     transitivePeerDependencies:
@@ -1241,8 +1249,8 @@ packages:
       '@graphql-tools/merge': 8.3.18
       '@graphql-tools/schema': 9.0.16
       '@graphql-tools/utils': 9.2.1
-      '@nestjs/common': 9.4.0_reflect-metadata@0.1.13
-      '@nestjs/core': 9.4.0_6r5ladex5hev3tpeuknr3oj3pe
+      '@nestjs/common': 9.4.0_atc7tu2sld2m3nk4hmwkqn6qde
+      '@nestjs/core': 9.4.0_4k3epc74gc2u2qkv5yznawsx6m
       '@nestjs/mapped-types': 1.2.2_6r5ladex5hev3tpeuknr3oj3pe
       chokidar: 3.5.3
       fast-glob: 3.2.12
@@ -1274,7 +1282,7 @@ packages:
       class-validator:
         optional: true
     dependencies:
-      '@nestjs/common': 9.4.0_reflect-metadata@0.1.13
+      '@nestjs/common': 9.4.0_atc7tu2sld2m3nk4hmwkqn6qde
       reflect-metadata: 0.1.13
     dev: false
     optional: true
@@ -1292,8 +1300,8 @@ packages:
       '@nestjs/platform-express':
         optional: true
     dependencies:
-      '@nestjs/common': 9.4.0_reflect-metadata@0.1.13
-      '@nestjs/core': 9.4.0_6r5ladex5hev3tpeuknr3oj3pe
+      '@nestjs/common': 9.4.0_atc7tu2sld2m3nk4hmwkqn6qde
+      '@nestjs/core': 9.4.0_4k3epc74gc2u2qkv5yznawsx6m
       tslib: 2.5.0
     dev: true
 
@@ -1477,6 +1485,16 @@ packages:
     resolution: {integrity: sha512-DAH8IJNORJJ7kQLqsZuhMkN6cwJjXzFuuUoZor7IIDHIHjtl51W+2F3Stg3+I3ZoKDfJfUNKqhipk2WZjG0FBg==}
     engines: {node: '>=8'}
     dependencies:
+      '@sentry/types': 7.53.1
+      '@sentry/utils': 7.53.1
+      tslib: 1.14.1
+    dev: true
+
+  /@sentry/hub/7.53.1:
+    resolution: {integrity: sha512-bdIT1z18KpbYH2390QP9yztAizXJ1Q+7EQ+kB3lew5pNkTimglokWuETOZHkMeZI7ilZhx1F7LN0ZM+cZRePUg==}
+    engines: {node: '>=8'}
+    dependencies:
+      '@sentry/core': 7.53.1
       '@sentry/types': 7.53.1
       '@sentry/utils': 7.53.1
       tslib: 1.14.1
@@ -5778,7 +5796,6 @@ packages:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
     dependencies:
       tslib: 2.5.0
-    dev: true
 
   /safe-buffer/5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}

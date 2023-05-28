@@ -1,5 +1,5 @@
 import { Inject, Injectable, ConsoleLogger, OnApplicationShutdown } from '@nestjs/common';
-import { ClientOptions, Client, Contexts } from '@sentry/types';
+import { ClientOptions, Client } from '@sentry/types';
 import * as Sentry from '@sentry/node';
 import { SENTRY_MODULE_OPTIONS } from './sentry.constants';
 import { SentryModuleOptions } from './sentry.interfaces';
@@ -54,7 +54,7 @@ export class SentryService extends ConsoleLogger implements OnApplicationShutdow
     return Sentry;
   }
 
-  log(message: string, context?: Contexts, asBreadcrumb?: boolean) {
+  log(message: string, context?: string, asBreadcrumb?: boolean) {
     message = `[LOG] ${message}`;
     try {
       super.log(message, context);
@@ -66,25 +66,32 @@ export class SentryService extends ConsoleLogger implements OnApplicationShutdow
             context
           }
         }) :
-        Sentry.captureMessage(message, 'log');
+        Sentry.captureMessage(message, {
+          level: 'log',
+          extra: {
+            log: context,
+          },
+        });
     } catch (err) { }
   }
 
-  error(message: string, trace?: string, context?: Contexts) {
+  error(message: string, trace?: string, context?: string) {
     message = `[ERROR] ${message}`;
     try {
-      super.error(message, trace, context);
+      super.error(message, trace);
       Sentry.captureMessage(message, {
         level: 'error',
-        contexts: context
+        extra: {
+          error: context,
+        },
       });
     } catch (err) { }
   }
 
-  warn(message: string, context?: Contexts, asBreadcrumb?: boolean) {
+  warn(message: string, context?: string, asBreadcrumb?: boolean) {
     message = `[WARN] ${message}`;
     try {
-      super.warn(message, context);
+      super.warn(message);
       asBreadcrumb ?
         Sentry.addBreadcrumb({
           message,
@@ -93,14 +100,19 @@ export class SentryService extends ConsoleLogger implements OnApplicationShutdow
             context
           }
         }) :
-        Sentry.captureMessage(message, 'warning');
+        Sentry.captureMessage(message, {
+          level: 'warning',
+          extra: {
+            warn: context,
+          },
+        });
     } catch (err) { }
   }
 
-  debug(message: string, context?: Contexts, asBreadcrumb?: boolean) {
+  debug(message: string, context?: string, asBreadcrumb?: boolean) {
     message = `[DEBUG] ${message}`;
     try {
-      super.debug(message, context);
+      super.debug(message);
       asBreadcrumb ?
         Sentry.addBreadcrumb({
           message,
@@ -109,14 +121,19 @@ export class SentryService extends ConsoleLogger implements OnApplicationShutdow
             context
           }
         }) :
-        Sentry.captureMessage(message, 'debug');
+        Sentry.captureMessage(message, {
+          level: 'debug',
+          extra: {
+            debug: context,
+          },
+        });
     } catch (err) { }
   }
 
-  verbose(message: string, context?: Contexts, asBreadcrumb?: boolean) {
+  verbose(message: string, context?: string, asBreadcrumb?: boolean) {
     message = `[VERBOSE] ${message}`;
     try {
-      super.verbose(message, context);
+      super.verbose(message);
       asBreadcrumb ?
         Sentry.addBreadcrumb({
           message,
@@ -125,7 +142,12 @@ export class SentryService extends ConsoleLogger implements OnApplicationShutdow
             context
           }
         }) :
-        Sentry.captureMessage(message, 'info');
+        Sentry.captureMessage(message, {
+          level: 'info',
+          extra: {
+            verbose: context,
+          },
+        });
     } catch (err) { }
   }
 
