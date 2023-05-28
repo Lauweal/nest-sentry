@@ -41,10 +41,11 @@
     "**/*.{ts,json}": []
   },
   "peerDependencies": {
-    "@nestjs/common": "^9.0.4",
+    "@nestjs/common": "9.4.0",
     "@nestjs/core": "^9.0.4",
     "@sentry/hub": "^7.7.0",
-    "@sentry/node": "^7.7.0",
+    "@sentry/node": "^7.53.1",
+    "@sentry/types": "^7.53.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
@@ -55,6 +56,8 @@
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.4.0",
     "@nestjs/testing": "9.4.0",
+    "@sentry/node": "^7.53.1",
+    "@sentry/types": "^7.53.1",
     "@types/jest": "29.5.0",
     "@types/node": "18.15.11",
     "@typescript-eslint/eslint-plugin": "5.57.1",

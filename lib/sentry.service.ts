@@ -1,5 +1,5 @@
 import { Inject, Injectable, ConsoleLogger, OnApplicationShutdown } from '@nestjs/common';
-import { ClientOptions, Client } from '@sentry/types';
+import { ClientOptions, Client, Contexts } from '@sentry/types';
 import * as Sentry from '@sentry/node';
 import { SENTRY_MODULE_OPTIONS } from './sentry.constants';
 import { SentryModuleOptions } from './sentry.interfaces';
@@ -54,7 +54,7 @@ export class SentryService extends ConsoleLogger implements OnApplicationShutdow
     return Sentry;
   }
 
-  log(message: string, context?: string, asBreadcrumb?: boolean) {
+  log(message: string, context?: Contexts, asBreadcrumb?: boolean) {
     message = `[LOG] ${message}`;
     try {
       super.log(message, context);
@@ -70,15 +70,18 @@ export class SentryService extends ConsoleLogger implements OnApplicationShutdow
     } catch (err) { }
   }
 
-  error(message: string, trace?: string, context?: string) {
+  error(message: string, trace?: string, context?: Contexts) {
     message = `[ERROR] ${message}`;
     try {
       super.error(message, trace, context);
-      Sentry.captureMessage(message, 'error');
+      Sentry.captureMessage(message, {
+        level: 'error',
+        contexts: context
+      });
     } catch (err) { }
   }
 
-  warn(message: string, context?: string, asBreadcrumb?: boolean) {
+  warn(message: string, context?: Contexts, asBreadcrumb?: boolean) {
     message = `[WARN] ${message}`;
     try {
       super.warn(message, context);
@@ -94,7 +97,7 @@ export class SentryService extends ConsoleLogger implements OnApplicationShutdow
     } catch (err) { }
   }
 
-  debug(message: string, context?: string, asBreadcrumb?: boolean) {
+  debug(message: string, context?: Contexts, asBreadcrumb?: boolean) {
     message = `[DEBUG] ${message}`;
     try {
       super.debug(message, context);
@@ -110,7 +113,7 @@ export class SentryService extends ConsoleLogger implements OnApplicationShutdow
     } catch (err) { }
   }
 
-  verbose(message: string, context?: string, asBreadcrumb?: boolean) {
+  verbose(message: string, context?: Contexts, asBreadcrumb?: boolean) {
     message = `[VERBOSE] ${message}`;
     try {
       super.verbose(message, context);
