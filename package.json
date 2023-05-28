@@ -58,7 +58,7 @@
     "@sentry/types": "^7.53.1",
     "@commitlint/cli": "17.5.1",
     "@commitlint/config-angular": "17.4.4",
-    "@nestjs/testing": "9.4.0",
+    "@nestjs/testing": "9.4.2",
     "@types/jest": "29.5.0",
     "@types/node": "18.15.11",
     "@typescript-eslint/eslint-plugin": "5.57.1",
