@@ -1,5 +1,11 @@
 # sentry-module
 
+## 1.0.1
+
+### Patch Changes
+
+- 577bb40: 异常提示
+
 ## 1.0.0
 
 ### Major Changes
