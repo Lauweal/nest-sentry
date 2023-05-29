@@ -47,7 +47,7 @@
     "@sentry/node": "^7.53.1",
     "@sentry/types": "^7.53.1",
     "reflect-metadata": "^0.1.13",
-    "rimraf": "^3.0.2",
+    "rimraf": "^5.0.1",
     "rxjs": "^7.2.0"
   },
   "devDependencies": {
@@ -64,7 +64,7 @@
     "@typescript-eslint/eslint-plugin": "5.57.1",
     "@typescript-eslint/parser": "5.57.1",
     "reflect-metadata": "^0.1.13",
-    "rimraf": "^3.0.2",
+    "rimraf": "^5.0.1",
     "rxjs": "^7.2.0",
     "eslint": "8.38.0",
     "eslint-config-prettier": "8.8.0",
