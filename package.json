@@ -61,7 +61,7 @@
     "@nestjs/testing": "9.4.0",
     "@types/jest": "29.5.0",
     "@types/node": "18.15.11",
-    "@typescript-eslint/eslint-plugin": "5.57.1",
+    "@typescript-eslint/eslint-plugin": "5.59.9",
     "@typescript-eslint/parser": "5.57.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
