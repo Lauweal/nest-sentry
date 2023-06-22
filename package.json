@@ -78,7 +78,7 @@
     "typescript": "5.0.4"
   },
   "optionalDependencies": {
-    "@nestjs/graphql": "^10.0.20"
+    "@nestjs/graphql": "^12.0.2"
   },
   "dependencies": {
     "@changesets/cli": "^2.26.1"
