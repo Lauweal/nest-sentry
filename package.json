@@ -75,7 +75,7 @@
     "prettier": "2.8.7",
     "release-it": "15.10.1",
     "ts-jest": "29.1.0",
-    "typescript": "5.0.4"
+    "typescript": "5.1.5"
   },
   "optionalDependencies": {
     "@nestjs/graphql": "^10.0.20"
