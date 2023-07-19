@@ -56,7 +56,7 @@
     "@sentry/hub": "^7.7.0",
     "@sentry/node": "^7.53.1",
     "@sentry/types": "^7.53.1",
-    "@commitlint/cli": "17.5.1",
+    "@commitlint/cli": "17.6.7",
     "@commitlint/config-angular": "17.4.4",
     "@nestjs/testing": "9.4.0",
     "@types/jest": "29.5.0",
