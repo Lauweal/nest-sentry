@@ -60,7 +60,7 @@
     "@commitlint/config-angular": "17.4.4",
     "@nestjs/testing": "9.4.0",
     "@types/jest": "29.5.0",
-    "@types/node": "18.15.11",
+    "@types/node": "20.4.6",
     "@typescript-eslint/eslint-plugin": "5.57.1",
     "@typescript-eslint/parser": "5.57.1",
     "reflect-metadata": "^0.1.13",
